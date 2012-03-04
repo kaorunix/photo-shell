@@ -1,0 +1,45 @@
+#!/bin/sh
+
+#mkdir small
+#cp *.JPG small/
+#cd small
+#mogrify -resize 5% *.JPG
+#cd ..
+
+
+echo "<HTML><HEAD></HEAD><BODY>"
+echo "<STYLE>"
+echo "ul.photo { list-style-type: none; }"
+echo "ul.photo li {"
+echo "  float: left;"
+echo "  margin: 0 5px 5px 0;"
+echo "}"
+echo "ul.photo li img {"
+echo "  border: 2px solid #bbb;"
+echo "  width:140px;"
+echo "  height:96px;"
+echo "}"
+echo "ul.photo li a { display: block; }"
+echo ".clearfix:after {"
+echo " content: \"\.\""
+echo " display: block;"
+echo " height: 0;"
+echo " line-height; 0;"
+echo " clear: both;"
+echo " visibility: hidden;"
+echo "}"
+echo ".clearfix { display: inline-block; }"
+#echo "*+html .clearfix { height: 50%; }"
+#echo "* html .clearfix { height: 50%; }"
+echo ".clearfix { display: block; }"
+echo "</STYLE>"
+echo "<ul class=\"photo clearfix\">"
+echo "</STYLE>"
+
+for i in *.JPG
+do
+  echo "<li><a href=\"$i\"><img src=\"small/$i\"\/></a></li>"
+done
+
+echo "</BODY>"
+echo "</HTML>"
